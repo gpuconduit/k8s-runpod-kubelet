@@ -6,7 +6,7 @@ import (
 	"log/slog"
 	"sync"
 
-	"github.com/bsvogler/conduit-kubelet/pkg/websocket"
+	"github.com/gpuconduit/conduit-kubelet/pkg/websocket"
 )
 
 // Manager manages multiple cloud providers and routes commands to the appropriate provider

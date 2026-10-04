@@ -58,7 +58,7 @@ conduit-kubelet/
 
 ```bash
 # Clone repository
-git clone https://github.com/BSVogler/k8s-runpod-kubelet conduit-kubelet
+git clone https://github.com/gpuconduit/k8s-runpod-kubelet conduit-kubelet
 cd conduit-kubelet
 
 # Install dependencies
@@ -189,8 +189,8 @@ package newprovider
 
 import (
     "context"
-    "github.com/bsvogler/conduit-kubelet/pkg/providers"
-    "github.com/bsvogler/conduit-kubelet/pkg/websocket"
+    "github.com/gpuconduit/conduit-kubelet/pkg/providers"
+    "github.com/gpuconduit/conduit-kubelet/pkg/websocket"
 )
 
 type Client struct {

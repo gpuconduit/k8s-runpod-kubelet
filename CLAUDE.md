@@ -108,7 +108,7 @@ go test -tags=integration ./...
 ```
 
 ### Container Commands
-The `Dockerfile` is multi-stage (golang builder → `gcr.io/distroless/static:nonroot`, CGO disabled, uid 65532) and honours `TARGETOS`/`TARGETARCH` for buildx multi-arch builds. Published image: `ghcr.io/bsvogler/conduit-kubelet` (`latest` on the default branch, `<git tag>` on releases, `<sha>` always).
+The `Dockerfile` is multi-stage (golang builder → `gcr.io/distroless/static:nonroot`, CGO disabled, uid 65532) and honours `TARGETOS`/`TARGETARCH` for buildx multi-arch builds. Published image: `ghcr.io/gpuconduit/conduit-kubelet` (`latest` on the default branch, `<git tag>` on releases, `<sha>` always).
 
 ```bash
 # Build container image
@@ -351,7 +351,7 @@ The platform service must implement:
 ## Deployment
 
 ### Helm Chart
-The chart lives in `deploy/helm/conduit-kubelet/` and is published as `oci://ghcr.io/bsvogler/helm/conduit-kubelet` (chart version = git tag without `v`, appVersion = git tag). Default namespace in docs is `conduit-system`.
+The chart lives in `deploy/helm/conduit-kubelet/` and is published as `oci://ghcr.io/gpuconduit/helm/conduit-kubelet` (chart version = git tag without `v`, appVersion = git tag). Default namespace in docs is `conduit-system`.
 
 Values → env mapping (`templates/deployment.yaml`): `conduit.url`→`BACKEND_URL`, `conduit.apiToken`→Secret key `CONDUIT_API_TOKEN`→`BACKEND_API_KEY`, `runpod.apiKey`→Secret key `RUNPOD_API_KEY`→`RUNPOD_API_KEY` (optional), `cluster.name`→`CLUSTER_NAME`, `kubelet.nodeName`→`NODE_NAME`, `kubelet.namespace`→`NAMESPACE`, `kubelet.logLevel`→`LOG_LEVEL`; `kubelet.healthServerAddress` and `kubelet.reconcileInterval` are passed as flags. `conduit.existingSecret` replaces the chart-managed Secret (same keys). Rendering fails unless `conduit.apiToken` or `conduit.existingSecret` is set.
 
@@ -408,8 +408,8 @@ This project evolved from a direct virtual kubelet (`k8s-runpod-kubelet`) that m
 Some routing logic (`GetPricing`, `GetAvailability`) remains from the original implementation and is deprecated for SaaS mode.
 ## Two Repositories: Private Development, Public Releases
 
-- **Private:** `BSVogler/conduit-kubelet` (remote `origin`) — day-to-day development, PRs, CI runs vet/test/lint only.
-- **Public:** `BSVogler/k8s-runpod-kubelet` (remote `public`, branch `master`) — trust building and build verification. Only this repo's CI publishes the image, chart and release binaries (the workflows gate on `github.repository`).
+- **Private:** `gpuconduit/conduit-kubelet` (remote `origin`) — day-to-day development, PRs, CI runs vet/test/lint only.
+- **Public:** `gpuconduit/k8s-runpod-kubelet` (remote `public`, branch `master`) — trust building and build verification. Only this repo's CI publishes the image, chart and release binaries (the workflows gate on `github.repository`).
 
 Both share one linear history, so publishing a release is a fast-forward push:
 

@@ -13,8 +13,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/bsvogler/conduit-kubelet/pkg/providers"
-	"github.com/bsvogler/conduit-kubelet/pkg/websocket"
+	"github.com/gpuconduit/conduit-kubelet/pkg/providers"
+	"github.com/gpuconduit/conduit-kubelet/pkg/websocket"
 )
 
 // Client handles all interactions with the RunPod API

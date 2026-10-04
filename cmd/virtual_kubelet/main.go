@@ -13,8 +13,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/bsvogler/conduit-kubelet/pkg/config"
-	virtualkubelet "github.com/bsvogler/conduit-kubelet/pkg/virtual_kubelet"
+	"github.com/gpuconduit/conduit-kubelet/pkg/config"
+	virtualkubelet "github.com/gpuconduit/conduit-kubelet/pkg/virtual_kubelet"
 
 	"github.com/virtual-kubelet/virtual-kubelet/node"
 	"github.com/virtual-kubelet/virtual-kubelet/node/api"

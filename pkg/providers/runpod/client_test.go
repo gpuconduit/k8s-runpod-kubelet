@@ -10,7 +10,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/bsvogler/conduit-kubelet/pkg/websocket"
+	"github.com/gpuconduit/conduit-kubelet/pkg/websocket"
 )
 
 func testClient(serverURL string) *Client {

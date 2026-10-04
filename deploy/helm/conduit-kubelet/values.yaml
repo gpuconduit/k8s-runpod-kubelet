@@ -1,14 +1,14 @@
 # Default values for conduit-kubelet.
 #
 # Minimal install:
-#   helm install conduit-kubelet oci://ghcr.io/bsvogler/helm/conduit-kubelet \
+#   helm install conduit-kubelet oci://ghcr.io/gpuconduit/helm/conduit-kubelet \
 #     --namespace conduit-system --create-namespace \
 #     --set conduit.apiToken=YOUR_TOKEN
 
 replicaCount: 1
 
 image:
-  repository: ghcr.io/bsvogler/conduit-kubelet
+  repository: ghcr.io/gpuconduit/conduit-kubelet
   pullPolicy: IfNotPresent
   # Defaults to the chart's appVersion.
   tag: ""

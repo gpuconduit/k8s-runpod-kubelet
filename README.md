@@ -65,7 +65,7 @@ in the cluster as shown below.
 Platform key mode (RunPod key stored in your Conduit account):
 
 ```bash
-helm install conduit-kubelet oci://ghcr.io/bsvogler/helm/conduit-kubelet \
+helm install conduit-kubelet oci://ghcr.io/gpuconduit/helm/conduit-kubelet \
   --namespace conduit-system --create-namespace \
   --set conduit.apiToken=YOUR_CONDUIT_TOKEN
 ```
@@ -73,7 +73,7 @@ helm install conduit-kubelet oci://ghcr.io/bsvogler/helm/conduit-kubelet \
 Local key mode (RunPod key stays in your cluster):
 
 ```bash
-helm install conduit-kubelet oci://ghcr.io/bsvogler/helm/conduit-kubelet \
+helm install conduit-kubelet oci://ghcr.io/gpuconduit/helm/conduit-kubelet \
   --namespace conduit-system --create-namespace \
   --set conduit.apiToken=YOUR_CONDUIT_TOKEN \
   --set runpod.apiKey=YOUR_RUNPOD_API_KEY
@@ -87,7 +87,7 @@ kubectl -n conduit-system create secret generic conduit-kubelet-credentials \
   --from-literal=CONDUIT_API_TOKEN=YOUR_CONDUIT_TOKEN \
   --from-literal=RUNPOD_API_KEY=YOUR_RUNPOD_API_KEY      # optional
 
-helm install conduit-kubelet oci://ghcr.io/bsvogler/helm/conduit-kubelet \
+helm install conduit-kubelet oci://ghcr.io/gpuconduit/helm/conduit-kubelet \
   --namespace conduit-system \
   --set conduit.existingSecret=conduit-kubelet-credentials
 ```
@@ -172,7 +172,7 @@ Plans and pricing: <https://gpuconduit.io/pricing/>.
 | `kubelet.logLevel` | `info` | `LOG_LEVEL` | `debug`, `info`, `warn`, `error`. |
 | `kubelet.healthServerAddress` | `:8080` | `--health-server-address` | Listen address for `/healthz`, `/readyz`, `/status`; the probes use its port. |
 | `kubelet.reconcileInterval` | `30` | `--reconcile-interval` | Informer resync interval in seconds. |
-| `image.repository` / `image.tag` / `image.pullPolicy` | `ghcr.io/bsvogler/conduit-kubelet` / chart `appVersion` / `IfNotPresent` | | Image. Pin `image.tag` to a release tag or a digest you built yourself. |
+| `image.repository` / `image.tag` / `image.pullPolicy` | `ghcr.io/gpuconduit/conduit-kubelet` / chart `appVersion` / `IfNotPresent` | | Image. Pin `image.tag` to a release tag or a digest you built yourself. |
 | `resources`, `nodeSelector`, `tolerations`, `affinity` | see `values.yaml` | | Scheduling of the kubelet pod itself (it must run on a real node). |
 | `livenessProbe` / `readinessProbe` | `/healthz` / `/readyz` | | `readyz` fails while the WebSocket is disconnected. |
 | `serviceAccount.*`, `rbac.create` | create | | ServiceAccount and ClusterRole/Binding. |
@@ -226,7 +226,7 @@ init containers, probes and sidecars are not supported on the virtual node.
 Requires Go 1.24+.
 
 ```bash
-git clone https://github.com/BSVogler/k8s-runpod-kubelet conduit-kubelet
+git clone https://github.com/gpuconduit/k8s-runpod-kubelet conduit-kubelet
 cd conduit-kubelet
 go build -ldflags "-X main.version=$(git describe --tags --always)" \
   -o conduit-kubelet ./cmd/virtual_kubelet
@@ -252,10 +252,10 @@ Run against a cluster from your machine:
 ```
 
 Release binaries for linux/darwin on amd64/arm64 with `checksums.txt` are
-attached to every [GitHub release](https://github.com/BSVogler/k8s-runpod-kubelet/releases).
-Images are published as `ghcr.io/bsvogler/conduit-kubelet:<tag>` (and `latest`
+attached to every [GitHub release](https://github.com/gpuconduit/k8s-runpod-kubelet/releases).
+Images are published as `ghcr.io/gpuconduit/conduit-kubelet:<tag>` (and `latest`
 for the default branch), the chart as
-`oci://ghcr.io/bsvogler/helm/conduit-kubelet:<version>`.
+`oci://ghcr.io/gpuconduit/helm/conduit-kubelet:<version>`.
 
 Developer notes (protocol, adding providers, debugging) are in
 [README.dev.md](README.dev.md) and [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).

@@ -7,11 +7,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/bsvogler/conduit-kubelet/pkg/command"
-	"github.com/bsvogler/conduit-kubelet/pkg/config"
-	"github.com/bsvogler/conduit-kubelet/pkg/providers"
-	"github.com/bsvogler/conduit-kubelet/pkg/providers/runpod"
-	"github.com/bsvogler/conduit-kubelet/pkg/websocket"
+	"github.com/gpuconduit/conduit-kubelet/pkg/command"
+	"github.com/gpuconduit/conduit-kubelet/pkg/config"
+	"github.com/gpuconduit/conduit-kubelet/pkg/providers"
+	"github.com/gpuconduit/conduit-kubelet/pkg/providers/runpod"
+	"github.com/gpuconduit/conduit-kubelet/pkg/websocket"
 
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/resource"

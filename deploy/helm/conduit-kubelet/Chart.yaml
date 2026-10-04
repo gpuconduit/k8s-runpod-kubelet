@@ -7,7 +7,7 @@ version: 0.1.0
 appVersion: "latest"
 home: https://gpuconduit.io
 sources:
-  - https://github.com/BSVogler/k8s-runpod-kubelet
+  - https://github.com/gpuconduit/k8s-runpod-kubelet
 maintainers:
   - name: bsvogler
     url: https://benediktsvogler.com

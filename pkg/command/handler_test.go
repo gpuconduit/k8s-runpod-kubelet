@@ -7,8 +7,8 @@ import (
 	"log/slog"
 	"testing"
 
-	"github.com/bsvogler/conduit-kubelet/pkg/providers"
-	"github.com/bsvogler/conduit-kubelet/pkg/websocket"
+	"github.com/gpuconduit/conduit-kubelet/pkg/providers"
+	"github.com/gpuconduit/conduit-kubelet/pkg/websocket"
 )
 
 func newTestHandler() *Handler {

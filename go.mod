@@ -1,4 +1,4 @@
-module github.com/bsvogler/conduit-kubelet
+module github.com/gpuconduit/conduit-kubelet
 
 go 1.24.0
 

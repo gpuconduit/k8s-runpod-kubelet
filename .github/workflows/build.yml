@@ -12,7 +12,7 @@ permissions:
   packages: write
 
 env:
-  IMAGE: ghcr.io/bsvogler/conduit-kubelet
+  IMAGE: ghcr.io/gpuconduit/conduit-kubelet
 
 jobs:
   test:
@@ -60,7 +60,7 @@ jobs:
     name: Container image
     runs-on: ubuntu-latest
     # Only the public repo publishes; the private development repo just verifies.
-    if: github.repository == 'BSVogler/k8s-runpod-kubelet'
+    if: github.repository == 'gpuconduit/k8s-runpod-kubelet'
     needs: [test]
     steps:
       - uses: actions/checkout@v4

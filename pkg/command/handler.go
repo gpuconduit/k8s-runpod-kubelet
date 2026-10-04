@@ -7,8 +7,8 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/bsvogler/conduit-kubelet/pkg/providers"
-	"github.com/bsvogler/conduit-kubelet/pkg/websocket"
+	"github.com/gpuconduit/conduit-kubelet/pkg/providers"
+	"github.com/gpuconduit/conduit-kubelet/pkg/websocket"
 )
 
 // Error codes used in error responses.

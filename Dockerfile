@@ -24,7 +24,7 @@ RUN --mount=type=cache,target=/go/pkg/mod \
 # Runtime stage: static, no shell, non-root (uid 65532)
 FROM gcr.io/distroless/static:nonroot
 
-LABEL org.opencontainers.image.source="https://github.com/BSVogler/k8s-runpod-kubelet" \
+LABEL org.opencontainers.image.source="https://github.com/gpuconduit/k8s-runpod-kubelet" \
       org.opencontainers.image.description="Conduit Kubelet: virtual kubelet that connects a Kubernetes cluster to the Conduit GPU platform" \
       org.opencontainers.image.licenses="PolyForm-Strict-1.0.0"
 

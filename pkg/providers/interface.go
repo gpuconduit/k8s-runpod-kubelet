@@ -3,7 +3,7 @@ package providers
 import (
 	"context"
 
-	"github.com/bsvogler/conduit-kubelet/pkg/websocket"
+	"github.com/gpuconduit/conduit-kubelet/pkg/websocket"
 )
 
 // Provider defines the interface that all cloud GPU providers must implement.
