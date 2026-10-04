@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>GPU Conduit</title>
+  <rect width="512" height="512" rx="112" fill="#F5F0E8" stroke="#E4DBCC" stroke-width="4"/>
+  <!-- conduit: copper C-shaped pipe -->
+  <path d="M338 156 A128 128 0 1 0 338 356" fill="none" stroke="#B4532A" stroke-width="44" stroke-linecap="butt"/>
+  <!-- GPU chip -->
+  <rect x="208" y="208" width="96" height="96" rx="16" fill="#0F5C63"/>
+  <g stroke="#0F5C63" stroke-width="10" stroke-linecap="round">
+    <path d="M232 184v12M256 184v12M280 184v12M232 316v12M256 316v12M280 316v12"/>
+    <path d="M316 232h12M316 256h12M316 280h12M184 232h12M184 256h12M184 280h12"/>
+  </g>
+</svg>

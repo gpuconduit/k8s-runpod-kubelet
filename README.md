@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-dark.svg">
+    <img src="docs/assets/logo.svg" alt="Conduit logo" width="96" height="96">
+  </picture>
+</p>
+
 # Conduit Kubelet
 
 Conduit Kubelet is a [virtual kubelet](https://virtual-kubelet.io/) that adds a
